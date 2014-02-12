@@ -1,41 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acceleration Example</title>
+    <title>Cordova Device Ready Example</title>
 
-    <script type="text/javascript" charset="utf-8" src="js/phonegap.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" charset="utf-8">
 
-    // Wait for device API libraries to load
+    // Call onDeviceReady when Cordova is loaded.
     //
-    document.addEventListener("deviceready", onDeviceReady, false);
+    // At this point, the document has loaded but cordova-2.3.0.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
 
-    // device APIs are available
+    // Cordova is loaded and it is now safe to make calls Cordova methods
     //
     function onDeviceReady() {
-        navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-    }
-
-    // onSuccess: Get a snapshot of the current acceleration
-    //
-    function onSuccess(acceleration) {
-        alert('Acceleration X: ' + acceleration.x + '\n' +
-              'Acceleration Y: ' + acceleration.y + '\n' +
-              'Acceleration Z: ' + acceleration.z + '\n' +
-              'Timestamp: '      + acceleration.timestamp + '\n');
-    }
-
-    // onError: Failed to get the acceleration
-    //
-    function onError() {
-        alert('onError!');
+        // Now safe to use the Cordova API
+		alert('sdaf');
     }
 
     </script>
   </head>
-  <body>
-    <h1>Example</h1>
-    <p>getCurrentAcceleration</p>
+  <body onload="onLoad()">
   </body>
 </html>
