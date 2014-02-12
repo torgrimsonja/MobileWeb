@@ -17,6 +17,13 @@
         Jason Torgrimson
     </author>
 
+	<!-- GENERAL PREFERENCES -->
+	
+	<preference name="phonegap-version" value="2.7.0" />
+	<preference name="orientation" value="portrait" />
+	<preference name="target-device" value="universal" />
+	<preference name="fullscreen" value="true" /> 
+
 	<!-- Default Icon -->
 	<icon src="icon.png" />
 	
