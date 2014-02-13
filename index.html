@@ -1,63 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acceleration Example</title>
-
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <title>TFHSBruins.com</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.0.min.css">
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script src="js/jquery.mobile-1.4.0.min.js"></script>
     <script type="text/javascript" charset="utf-8">
-
-    // The watch id references the current `watchAcceleration`
-    var watchID = null;
-
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-		window.alert('worked');
-        startWatch();
-    }
-
-    // Start watching the acceleration
-    //
-    function startWatch() {
-
-        // Update acceleration every 3 seconds
-        var options = { frequency: 10 };
-
-        watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-    }
-
-    // Stop watching the acceleration
-    //
-    function stopWatch() {
-        if (watchID) {
-            navigator.accelerometer.clearWatch(watchID);
-            watchID = null;
-        }
-    }
-
-    // onSuccess: Get a snapshot of the current acceleration
-    //
-    function onSuccess(acceleration) {
-        var element = document.getElementById('accelerometer');
-        element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
-                            'Acceleration Y: ' + acceleration.y         + '<br />' +
-                            'Acceleration Z: ' + acceleration.z         + '<br />' +
-                            'Timestamp: '      + acceleration.timestamp + '<br />';
-    }
-
-    // onError: Failed to get the acceleration
-    //
-    function onError() {
-        alert('onError!');
-    }
 
     </script>
   </head>
   <body>
-    <div id="accelerometer">Waiting for accelerometer...</div>
+        <div data-role="page" data-theme="a">
+        <div data-role="header" data-position="fixed">
+            <h1>TFHSBruins</h1>
+        </div><!-- /header -->
+            <div data-role="controlgroup">
+                    <a href="accelerometer/index.htm" data-role="button">Accelerometer</a>
+                    <a href="2" data-role="button">The 2nd Option</a>
+                    <a href="3" data-role="button">The 3rd Option</a>
+                    <a href="4" data-role="button">The 4th Option</a>
+            </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>&copy; 2014</h1>
+        </div><!-- /header -->
+        </div>
   </body>
 </html>
