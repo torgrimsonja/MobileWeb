@@ -29,6 +29,7 @@
         //
         function startWatch() {
     
+			console.log('In startWatch');
             // Update acceleration every 3 seconds
             var options = { frequency: 10 };
     
@@ -52,6 +53,23 @@
                                 'Acceleration Y: ' + acceleration.y         + '<br />' +
                                 'Acceleration Z: ' + acceleration.z         + '<br />' +
                                 'Timestamp: '      + acceleration.timestamp + '<br />';
+			var x = acceleration.x;
+			var y = acceleration.y;
+			var left = parseInt($("#box").css("left"));
+			var top = parseInt($("#box").css("top"));
+			
+			if(x > 0 && left > 0){
+				$("#box").css("left", left-=1);
+			}else if(x < 0){
+				$("#box").css("left", left+=1);
+			}
+			
+			if(y>0){
+				$("#box").css("top", top-=1);
+			}else{
+				$("#box").css("top", top+=1);
+			}
+console.log(x+' = '+y);
         }
     
         // onError: Failed to get the acceleration
@@ -63,6 +81,16 @@
         </script>
 
         <div id="accelerometer">Waiting for accelerometer...</div>
+        <div id="box"
+        	 style="	background-color: blue;
+             			width: 20px; 
+             			height: 20px; 
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+             ">
+        	&nbsp;
+        </div>
         <div data-role="footer" data-position="fixed">
             <h1>&copy; 2014</h1>
         </div><!-- /header -->
