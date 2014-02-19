@@ -27,7 +27,7 @@
         //
         function startWatch() {
     
-			console.log('In startWatch');
+			window.alert('In startWatch');
             // Update acceleration every 3 seconds
             var options = { frequency: 10 };
     
@@ -46,6 +46,7 @@
         // onSuccess: Get a snapshot of the current acceleration
         //
         function onSuccess(acceleration) {
+			window.alert('In onSuccess');
 
 			$('coordinates').html('x = '+acceleration.x+'<br />y = '+acceleration.y);
 			var x = acceleration.x;
