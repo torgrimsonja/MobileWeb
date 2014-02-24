@@ -64,4 +64,7 @@
 	<gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
 	
 	<gap:plugin name="nl.x-services.plugins.toast" />
+	<gap:plugin name="com.chariotsolutions.nfc.plugin" />
+	<gap:plugin name="nl.x-services.plugins.calendar" />
+	<gap:plugin name="com.megster.cordova.bluetoothserial" />
 </widget>
