@@ -18,7 +18,7 @@
     
         // Wait for device API libraries to load
         //
-        $(document).ready(function () {
+        $(document).bind('deviceready',function() {
             console.log('deviceready fired');
             startWatch();
         });
