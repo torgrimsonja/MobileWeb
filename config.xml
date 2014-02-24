@@ -67,4 +67,5 @@
 	<gap:plugin name="com.chariotsolutions.nfc.plugin" />
 	<gap:plugin name="nl.x-services.plugins.calendar" />
 	<gap:plugin name="com.megster.cordova.bluetoothserial" />
+	<gap:plugin name="org.apache.cordova.device-motion" />
 </widget>
