@@ -64,4 +64,5 @@
 	<gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
 
 	<gap:plugin name="org.apache.cordova.device-motion" />
+	
 </widget>
