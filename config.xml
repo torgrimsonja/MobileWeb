@@ -22,6 +22,7 @@
 	<!-- <preference name="phonegap-version" value="3.1.0" /> -->u
 	<preference name="target-device" value="universal" />
 	<preference name="fullscreen" value="true" /> 
+	<preference name="orientation" value="vertical" />
 
 	<!-- Default Icon -->
 	<icon src="icon.png" />
@@ -61,9 +62,6 @@
 	<gap:splash src="splash/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
 	<gap:splash src="splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
 	<gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
-	<plugins>
-		<feature name="Accelerometer">
-			<param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
-		</feature>        
-	</plugins>
+	
+	<gap:plugin name="Accelerometer" value="org.apache.cordova.core.AccelListener" />
 </widget>
