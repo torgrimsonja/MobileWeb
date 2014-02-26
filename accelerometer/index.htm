@@ -3,7 +3,6 @@
   <head>
     <title>Acceleration Example</title>
     <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="../cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
     </script>
   </head>
@@ -19,10 +18,12 @@
     
         // Wait for device API libraries to load
         //
-        $(document).bind('touchstart', function() {
-            console.log('deviceready fired');
+        document.addEventListener("deviceready", onDeviceReady, false);
+        
+		function onDeviceReady(){
+			console.log('deviceready fired');
             startWatch();
-        });
+        }
     
         // Start watching the acceleration
         //
